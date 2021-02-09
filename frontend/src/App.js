@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import HomeScreen from './screens/HomeScreen'
 
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
 
     <Container>
     
-    <h1>Welcome to BagxBill</h1>
+      <HomeScreen />
     
     </Container>
     
