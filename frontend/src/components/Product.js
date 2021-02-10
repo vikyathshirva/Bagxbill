@@ -2,6 +2,7 @@ import React from 'react'
 import Rating from './Rating'
 import { Card } from 'react-bootstrap'
 
+
 const Product = ({product}) => {
     return (
       <Card className="my-3 p-3 rounded">
@@ -10,6 +11,7 @@ const Product = ({product}) => {
         </a>
         <Card.Body>
           <a href={`/product/${product._id}`}>
+          
             <Card.Title as='div'>
             <strong>{product.name}</strong>
             </Card.Title>
