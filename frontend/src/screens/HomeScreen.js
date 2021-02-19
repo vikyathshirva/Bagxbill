@@ -15,7 +15,7 @@ const HomeScreen = () => {
 
     useEffect(()=>{
         dispatch(listProducts())
-     },[dispatch])
+     }, [dispatch])
 
 
 
@@ -25,7 +25,7 @@ const HomeScreen = () => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant = 'danger'>{error}</Message>
+          <Message variant='danger'>{error}</Message>
         ) : (
           <Row>
             {products.map((product) => (

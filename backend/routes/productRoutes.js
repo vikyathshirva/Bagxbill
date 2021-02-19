@@ -14,6 +14,9 @@ import Product from '../models/productModel.js'
     router.get('/', 
     AsyncHandler(async (req, res) => {
         const products = await Product.find({})
+
+    res.status(401)
+    throw new Error('Not Authorised')
     res.json(products);
     }))
 
