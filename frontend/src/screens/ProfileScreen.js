@@ -35,7 +35,7 @@ export const ProfileScreen = ({ location, history }) => {
       history.push("/login");
     } else {
       if (!user.name) {
-        dispatch(getUserDetails("profile"));
+        dispatch(getUserDetails('profile'));
         dispatch(listMyOrders());
       } else {
         setName(user.name);
@@ -139,7 +139,8 @@ export const ProfileScreen = ({ location, history }) => {
                   <td>{order.totalPrice}</td>
                   <td>
                     {order.isPaid ? (
-                      order.paidAt.substring(0, 10)
+                      <i class="fas fa-check"></i>
+                      
                     ) : (
                       <i className="fas fa-times" style={{ color: "red" }}></i>
                     )}
