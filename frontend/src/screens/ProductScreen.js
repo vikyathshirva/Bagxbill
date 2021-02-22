@@ -65,7 +65,6 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
- 
       <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
@@ -74,8 +73,8 @@ const ProductScreen = ({ history, match }) => {
       ) : error ? (
         <Message vairant="danger">{error}</Message>
       ) : (
-        <>   
-        <Meta title={product.name} />
+        <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
@@ -91,7 +90,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Price:₹{product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -104,7 +103,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>₹{product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -166,7 +165,9 @@ const ProductScreen = ({ history, match }) => {
                 ))}
                 <ListGroup.Item>
                   <h2>Write a customer Review</h2>
-                  {errorProductReview && <Message variant='danger'>{errorProductReview}</Message>}
+                  {errorProductReview && (
+                    <Message variant="danger">{errorProductReview}</Message>
+                  )}
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId="rating">
@@ -193,8 +194,8 @@ const ProductScreen = ({ history, match }) => {
                           onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
-                      <Button type='submit' vairant='primary'>
-                       Submit
+                      <Button type="submit" vairant="primary">
+                        Submit
                       </Button>
                     </Form>
                   ) : (

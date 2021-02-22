@@ -25,3 +25,15 @@ h2 {
 strong {
     color:black;
 }
+.carousel-caption {
+    width: 200px;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    left: 65%;
+    bottom: auto;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}

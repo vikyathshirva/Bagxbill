@@ -156,7 +156,7 @@ const OrderScreen = ({ match,history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} X ${item.price} = ${item.qty * item.price}
+                          {item.qty} X ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -176,28 +176,28 @@ const OrderScreen = ({ match,history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>$ {order.itemsPrice}</Col>
+                  <Col>₹ {order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>$ {order.shippingPrice}</Col>
+                  <Col>₹ {order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>$ {order.taxPrice}</Col>
+                  <Col>₹ {order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>$ {order.totalPrice}</Col>
+                  <Col>₹ {order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
@@ -213,18 +213,21 @@ const OrderScreen = ({ match,history }) => {
                   )}
                 </ListGroup.Item>
               )}
-              {loadingDeliver && <Loader /> }
-              {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
-                <ListGroup.Item>
-                  <Button
-                    type="button"
-                    className="btn btn-block"
-                    onClick={deliverHandler}
-                  >
-                    Mark as Delivered
-                  </Button>
-                </ListGroup.Item>
-              )}
+              {loadingDeliver && <Loader />}
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      className="btn btn-block"
+                      onClick={deliverHandler}
+                    >
+                      Mark as Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
             </ListGroup>
           </Card>
         </Col>
