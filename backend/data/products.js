@@ -98,7 +98,7 @@ BX80684I79700K
 I79700K`,
     brand: "Intel",
     category: "Electronics",
-    price: 229.99,
+    price: 22922.99,
     countInStock: 3,
     rating: 4,
     numReviews: 12,
